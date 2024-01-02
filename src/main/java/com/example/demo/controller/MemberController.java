@@ -63,4 +63,19 @@ public class MemberController {
         model.addAttribute("member", memberDto);
         return "detail";
     }
+
+
+    @GetMapping("/member/update")
+    public String updateForm(HttpSession session, Model model) {
+        String myEmail = (String) session.getAttribute("loginEmail");
+        MemberDto memberDto = service.updateForm(myEmail);
+        model.addAttribute("updateMember", memberDto);
+        return "update";
+    }
+
+    @PostMapping("/member/update")
+    public String update(@ModelAttribute MemberDto memberDto) {
+        service.update(memberDto);
+        return "redirect:/member/"+memberDto.getId();
+    }
 }

@@ -71,4 +71,17 @@ public class MemberService {
             return  null;
         }
     }
+
+    public MemberDto updateForm(String myEmail) {
+        Optional<MemberEntity> optionalMemberEntity = memberRepository.findByMemberEmail(myEmail);
+        if (optionalMemberEntity.isPresent()) {
+            return MemberDto.toMemberDto(optionalMemberEntity.get());
+        } else {
+            return null;
+        }
+    }
+
+    public void update(MemberDto memberDto) {
+        memberRepository.save(MemberEntity.toUpdateMemberEntity(memberDto));
+    }
 }
