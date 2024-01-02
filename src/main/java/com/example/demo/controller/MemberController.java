@@ -76,6 +76,12 @@ public class MemberController {
     @PostMapping("/member/update")
     public String update(@ModelAttribute MemberDto memberDto) {
         service.update(memberDto);
-        return "redirect:/member/"+memberDto.getId();
+        return "redirect:/member/" + memberDto.getId();
+    }
+
+    @GetMapping("/member/delete/{id}")
+    public String deleteById(@PathVariable Long id) {
+        service.deleteById(id);
+        return "redirect:/member/";
     }
 }
