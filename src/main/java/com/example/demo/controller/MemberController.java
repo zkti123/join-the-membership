@@ -18,7 +18,7 @@ public class MemberController {
     @PostMapping("/member/save")
     public String save(@RequestParam("memberEmail") String memberEmail,
                        @RequestParam("memberPassword")String memberPassword,
-                       @RequestParam("meberName")String memberName) {
+                       @RequestParam("memberName")String memberName) {
 
         System.out.println("MemberController.save");
         System.out.println("memberEmail = " + memberEmail + ", memberPassword = " + memberPassword + ", memberName = " + memberName);
