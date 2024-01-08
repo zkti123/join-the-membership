@@ -4,6 +4,7 @@ import com.example.demo.dto.MemberDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.lang.reflect.Member;
 
@@ -43,4 +44,9 @@ public class MemberEntity {
         return memberEntity;
     }
 
+//    public void setMemberPassword(String password) {
+//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//        String hashePassword = passwordEncoder.encode(password);
+//        this.memberPassword = hashePassword;
+//    }
 }

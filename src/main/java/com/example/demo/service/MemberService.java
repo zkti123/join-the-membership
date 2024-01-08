@@ -19,6 +19,7 @@ public class MemberService {
         //1. dto -> entity 변환
         //2. repositoty의 save 메서드 호출
         MemberEntity memberEntity = MemberEntity.toMemberEntity(memberDto);
+
         memberRepository.save(memberEntity);
         //repository의 save메서드 전송(조건, entity객체를 넘겨줘야 함)
 
